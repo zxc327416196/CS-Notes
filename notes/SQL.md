@@ -74,15 +74,23 @@ CREATE TABLE mytable (
 添加列
 
 ```sql
-ALTER TABLE mytable
+ALTER TABLE mytable  --修改列相关的都要加这一句
 ADD col CHAR(20);
 ```
 
 删除列
 
 ```sql
+# 某些数据库系统不允许这种删除列的方式。
 ALTER TABLE mytable
 DROP COLUMN col;
+```
+
+改变列的数据类型
+
+```sql
+ALTER TABLE table_name
+ALTER COLUMN column_name datatype
 ```
 
 # 四、插入
@@ -227,19 +235,28 @@ WHERE col IS NULL;
 | = | 等于 |
 | &lt; | 小于 |
 | &gt; | 大于 |
-| &lt;&gt; != | 不等于 |
-| &lt;= !&gt; | 小于等于 |
-| &gt;= !&lt; | 大于等于 |
-| BETWEEN | 在两个值之间 |
+| &lt;&gt;   != | 不等于 |
+| &lt;=   !&gt; | 小于等于 |
+| &gt;=   !&lt; | 大于等于 |
+| BETWEEN..AND.. | 在两个值之间 |
 | IS NULL | 为 NULL 值 |
 
 应该注意到，NULL 与 0、空字符串都不同。
 
 **AND 和 OR**  用于连接多个过滤条件。优先处理 AND，当一个过滤表达式涉及到多个 AND 和 OR 时，可以使用 () 来决定优先级，使得优先级关系更清晰。
 
-**IN**  操作符用于匹配一组值，其后也可以接一个 SELECT 子句，从而匹配子查询得到的一组值。
+**IN**  操作符用于匹配一组值，其后也可以接一个 SELECT 子句，IN 操作符允许我们在 WHERE 子句中规定多个值。
+```sql
+SELECT * FROM Persons
+WHERE LastName IN ('Adams','Carter')   
+```
 
 **NOT**  操作符用于否定一个条件。
+```sql
+SELECT ID
+FROM city
+WHERE ID NOT IN(10,100);   --查询ID不是10和100的
+```
 
 # 十、通配符
 
