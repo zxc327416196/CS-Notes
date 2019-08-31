@@ -693,7 +693,7 @@ MySQL 不允许在触发器中使用 CALL 语句，也就是不能调用存储�
 
 基本术语：
 
-- 事务（transaction）指一组 SQL 语句；
+- 事务（transaction）指一组 SQL 语句，要么全部执行，要么全部不执行；
 - 回退（rollback）指撤销指定 SQL 语句的过程；
 - 提交（commit）指将未存储的 SQL 语句结果写入数据库表；
 - 保留点（savepoint）指事务处理中设置的临时占位符（placeholder），你可以对它发布回退（与回退整个事务处理不同）。
