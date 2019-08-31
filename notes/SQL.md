@@ -100,6 +100,14 @@ INSERT INTO mytable(col1, col2)
 VALUES(val1, val2);
 ```
 
+插入多条数据
+
+```sql
+INSERT INTO mytable(col1, col2)
+VALUES(val1, val2),
+VALUES(val3, val4);
+```
+
 插入检索出来的数据
 
 ```sql
