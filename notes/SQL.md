@@ -164,8 +164,9 @@ SELECT 列名称 FROM 表名称
 相同值只会出现一次。它作用于所有列，也就是说所有列的值都相同才算相同。
 
 ```sql
-SELECT DISTINCT col1, col2
-FROM mytable;  --col1和col2这两列数据都相同的，算作重复，只显示一个
+# col1和col2这两列数据都相同的，算作重复，只显示一个
+SELECT DISTINCT col1, col2 
+FROM mytable;  
 ```
 
 ## LIMIT
@@ -183,7 +184,7 @@ LIMIT 5;
 ```sql
 SELECT *
 FROM mytable
-LIMIT 0, 5;
+LIMIT 0, 5; --从0起（不含0）
 ```
 
 返回第 3 \~ 5 行：
@@ -191,7 +192,7 @@ LIMIT 0, 5;
 ```sql
 SELECT *
 FROM mytable
-LIMIT 2, 3;
+LIMIT 2, 3; --从2起（不含2）
 ```
 
 # 八、排序
@@ -206,6 +207,8 @@ SELECT *
 FROM mytable
 ORDER BY col1 DESC, col2 ASC;
 ```
+
+在以上的结果中有两个相等的col1值时，第二列才得以体现出升序排列。如果第一列中有些值为 nulls 时，情况也是这样的。
 
 # 九、过滤
 
