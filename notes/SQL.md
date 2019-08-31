@@ -132,6 +132,7 @@ SELECT * FROM mytable;
 # 五、更新
 
 ```sql
+#UPDATE 表名 SET 列名=值 WHERE 列名=值
 UPDATE mytable
 SET col = val
 WHERE id = 1;
