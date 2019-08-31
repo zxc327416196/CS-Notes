@@ -85,12 +85,6 @@ ALTER TABLE mytable
 DROP COLUMN col;
 ```
 
-删除表
-
-```sql
-DROP TABLE mytable;
-```
-
 # 四、插入
 
 普通插入
@@ -153,9 +147,17 @@ WHERE id = 1;
 TRUNCATE TABLE mytable;
 ```
 
-使用更新和删除操作时一定要用 WHERE 子句，不然会把整张表的数据都破坏。可以先用 SELECT 语句进行测试，防止错误删除。
+删除表
+
+```sql
+DROP TABLE mytable;
+```
+
+**使用更新和删除操作时一定要用 WHERE 子句**，不然会把整张表的数据都破坏。可以先用 SELECT 语句进行测试，防止错误删除。
 
 # 七、查询
+
+SELECT 列名称 FROM 表名称
 
 ## DISTINCT
 
@@ -163,14 +165,14 @@ TRUNCATE TABLE mytable;
 
 ```sql
 SELECT DISTINCT col1, col2
-FROM mytable;
+FROM mytable;  --col1和col2这两列数据都相同的，算作重复，只显示一个
 ```
 
 ## LIMIT
 
 限制返回的行数。可以有两个参数，第一个参数为起始行，从 0 开始；第二个参数为返回的总行数。
 
-返回前 5 行：
+返回前 5 行（1 \~ 5）：
 
 ```sql
 SELECT *
