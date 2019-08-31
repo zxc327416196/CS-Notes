@@ -108,6 +108,12 @@ VALUES(val1, val2),
 VALUES(val3, val4);
 ```
 
+如果所有的列都要添加数据可以不规定列进行添加数据
+```sql
+INSERT INTO mytable
+VALUES(val1, val2, val3);
+```
+
 插入检索出来的数据
 
 ```sql
