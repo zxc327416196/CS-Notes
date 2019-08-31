@@ -140,6 +140,8 @@ WHERE id = 1;
 
 # 六、删除
 
+当你不再需要该表时，用drop；当你仍要保留该表，但要删除所有记录时，用truncate；当你要删除部分记录时（always with a WHERE clause), 用delete.
+
 ```sql
 DELETE FROM mytable
 WHERE id = 1;
