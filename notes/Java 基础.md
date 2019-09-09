@@ -181,6 +181,18 @@ public final class String
 }
 ```
 
+补充：char和byte互转
+
+```java
+char转byte
+char a='a';
+byte b=Byte.parseByte((int)a+"");
+
+byte转char
+byte b=100;
+char c=(char)b;
+```
+
 value 数组被声明为 final，这意味着 value 数组初始化之后就不能再引用其它数组。并且 String 内部没有改变 value 数组的方法，因此可以保证 String 不可变。
 
 ## 不可变的好处
