@@ -696,9 +696,9 @@ SuperExtendExample.func()
 
 下面的示例中，SubClass 为 SuperClass 的子类，SubClass 重写了 SuperClass 的 func() 方法。其中：
 
-- 子类方法访问权限为 public，大于父类的 protected。
-- 子类的返回类型为 ArrayList<Integer>，是父类返回类型 List<Integer> 的子类。
-- 子类抛出的异常类型为 Exception，是父类抛出异常 Throwable 的子类。
+- 子类方法访问权限为 public，大于父类的 protected。  //子承父业，将访问权限进一步扩大
+- 子类的返回类型为 ArrayList<Integer>，是父类返回类型 List<Integer> 的子类。  //向上转型
+- 子类抛出的异常类型为 Exception，是父类抛出异常 Throwable 的子类。  //改善父类的缺点
 - 子类重写方法使用 @Override 注解，从而让编译器自动检查是否满足限制条件。
 
 ```java
@@ -790,7 +790,7 @@ public static void main(String[] args) {
 
 存在于同一个类中，指一个方法与已经存在的方法名称上相同，但是参数类型、个数、顺序至少有一个不同。
 
-应该注意的是，返回值不同，其它都相同不算是重载。
+应该注意的是，返回值不同，其它都相同不算是重载。   //会报错，说方法已存在。
 
 # 五、Object 通用方法
 
