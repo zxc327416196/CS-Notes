@@ -571,6 +571,7 @@ public interface InterfaceExample {
 
     void func1();
 
+    //default关键字：Java8之后的接口默认方法
     default void func2(){
         System.out.println("func2");
     }
